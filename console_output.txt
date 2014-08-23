@@ -1,0 +1,31 @@
+> makeCacheMatrix(toeplitz(1:5))
+$set
+function (z) 
+{
+    x <<- z
+    minverse <<- NULL
+}
+<environment: 0x000000000a9ece68>
+
+$get
+function () 
+x
+<environment: 0x000000000a9ece68>
+
+$setsolve
+function (solve) 
+minverse <<- solve
+<environment: 0x000000000a9ece68>
+
+$getsolve
+function () 
+minverse
+<environment: 0x000000000a9ece68>
+
+> cacheSolve(makeCacheMatrix(toeplitz(1:5)))
+              [,1]          [,2]          [,3]          [,4]          [,5]
+[1,] -4.166667e-01  5.000000e-01 -8.881784e-17  3.256654e-16  8.333333e-02
+[2,]  5.000000e-01 -1.000000e+00  5.000000e-01 -7.401487e-16  1.850372e-16
+[3,] -1.110223e-16  5.000000e-01 -1.000000e+00  5.000000e-01  0.000000e+00
+[4,]  2.775558e-17 -1.110223e-16  5.000000e-01 -1.000000e+00  5.000000e-01
+[5,]  8.333333e-02  2.465190e-32 -1.110223e-16  5.000000e-01 -4.166667e-01
