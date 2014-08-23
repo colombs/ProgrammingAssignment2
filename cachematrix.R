@@ -5,6 +5,7 @@
 ## makeCacheMatrix function first defines a matrix. (arguments will define if symetric or not, for evaluation i will
 ## use a special matrix called toeplitz which is already on R it returns a constant diagonal matrix, only giving
 ## the first row... toeplitz(1:5)---> makes 5x5 matrix *** see annex comments)
+## places the matrix defined in a temporary "virtual" cache if needed
 
 
 makeCacheMatrix <- function(x = matrix()) {
@@ -27,7 +28,7 @@ makeCacheMatrix <- function(x = matrix()) {
 ## argument. for example: cacheSolve(makeCacheMatrix(arguments of the matrix))
 
 cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
+        ## Return a matrix that is the inverse of 'x' depending on if its already calculated skips the calculation if not make solve again
   
   minverse <- x$getsolve()
   if(!is.null(minverse)) {
